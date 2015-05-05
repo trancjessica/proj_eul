@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int sumofMultiples(int num1, int num2, int cap)
+{
+	int sum = 0;
+	vector<int> container;
+	for(int i = 0; i < cap; i++)
+	{
+		if(i % num1 == 0 || i % num2 == 0)
+			container.push_back(i);
+	}
+	for(int i = 0; i < container.size(); i++)
+	{
+		sum = sum + container[i];
+	}
+	return sum;
+}
+int main() {
+	const int NUM1 = 3;
+	const int NUM2 = 5;
+	const int CAP = 1000;
+	
+	int answer = sumofMultiples(3,5,1000);
+	cout << "The answer is: " << answer << endl;
+	return 0;
+}
