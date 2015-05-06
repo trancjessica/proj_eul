@@ -1,0 +1,34 @@
+/********************************
+ Created by Jessica Tran
+ ********************************/
+
+#include <iostream>
+
+
+unsigned long int generateFibonacci(long int cap)
+{
+    
+    unsigned long int fibonacci_0 = 0;
+    unsigned long int fibonacci_1 = 1;
+    unsigned long int sum = 0;
+    unsigned long int nextFibonacci = fibonacci_0 + fibonacci_1;
+    
+    for(int i = 0; i < cap; i++)
+    {
+        nextFibonacci = fibonacci_0 + fibonacci_1;
+        //cout << "Next fibonacci: " << nextFibonacci << endl;
+        if(nextFibonacci % 2 == 0 && nextFibonacci < cap)
+            sum = sum + nextFibonacci;
+        //cout << "sum: " << sum << endl;
+        fibonacci_0 = fibonacci_1;
+        fibonacci_1 = nextFibonacci;
+    }
+    return sum;
+}
+
+int main() {
+    const long int CAP = (4000000);
+    
+    std::cout << generateFibonacci(CAP) << std::endl;;
+    return 0;
+}
