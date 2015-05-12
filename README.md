@@ -1,2 +1,2 @@
-# projecteuler
-My solutions of problems found on Project Euler
+# proj_eul
+My solutions of problems
