@@ -1,0 +1,36 @@
+/*****************************
+ Find the largest prime factor
+ ******************************/
+ 
+ int main()
+{
+    unsigned long int number = 600851475143;
+    long int divisor;
+    unsigned long int largestdivisor;
+    
+    for(unsigned long int i = 2 ; i < number; i++)
+    {
+        bool prime = 1;
+        divisor = i;
+        
+        if(number % divisor == 0)
+        {
+            largestdivisor = number/divisor;
+            for(long int j = largestdivisor - 2; j > 1; j = j -2)
+            {
+                if(largestdivisor % j == 0)
+                {
+                    prime = false;
+                    break;
+                }
+            }
+            if(prime)
+            {
+                std::cout << (largestdivisor) << std::endl;
+                return 0;
+            }
+            
+        }
+    }
+    return 0;
+}
